@@ -1,0 +1,44 @@
+body {
+    font-family: Arial,  sans-serif;
+    background:pink ;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    width: 70%;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(red, green, blue, alpha);
+    color: blueviolet;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+ 
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: yellow;
+    border-radius:10px ;
+
+
+}
+
+table th{
+    background: yellow;
+    color: rgb(12, 51, 133);
+    padding: 12px;
+}

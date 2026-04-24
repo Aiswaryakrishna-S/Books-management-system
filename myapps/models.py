@@ -1,0 +1,10 @@
+from django.db import models
+class Books(models.Model):
+
+     bookname=models.CharField(max_length=15)
+     author=models.CharField(max_length=20)
+     category=models.CharField(max_length=15)
+     price=models.IntegerField(max_length=15)
+           
+
+# Create your models here.

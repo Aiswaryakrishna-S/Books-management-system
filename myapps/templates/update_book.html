@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <div class='container'>
+<form method="POST" class="form-box">
+    {% csrf_token %}
+
+    <label>Booknamw:</label><br>
+    <input type="text" name="bookname" value="{{book.bookname}}"><br>
+
+    <label>Author:</label><br>
+    <input type="text" name="author" value="{{book.author}}"><br>
+
+    <label>Category:</label><br>
+    <input type="text" name="category" value="{{book.category}}"><br>
+
+    <label>Price:</label><br>
+    <input type="number" name="price" value="{{book.price}}"><br>
+
+    
+
+
+    <button type="submit">Update</button>
+</form>
+</div>
+   <a href="{% url 'home' %}">Back to Home</a> 
+
+</body>
+</html>

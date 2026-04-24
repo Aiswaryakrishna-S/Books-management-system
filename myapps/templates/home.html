@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <div class='container'>
+        <h1>Book List</h1>
+        <form method="POST" class="form-box">
+
+          {% if books %}  
+           <table border="1">
+    <tr>
+        <th>Bookname</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Price</th>
+    </tr>
+
+    {% for book in books %}
+    <tr>
+        <td>{{book.bookname}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.category}}</td>
+        <td>{{book.price}}</td>
+        <td>
+         <a class="btn-delete" href="{%  url 'delete_book' book.id %}">Delete</a>
+         <a class="btn-update" href="{% url 'update_book' book.id %}">Edit</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+     <a class="btn-add" href="{% url 'add_book'  %}">Add book</a>
+    </td>
+    </table>
+    
+ {% else %}
+  <p>no books available</p>
+ {% endif %}
+</div>
+    
+</form>
+    
+</body>
+</html>
