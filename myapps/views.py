@@ -7,7 +7,7 @@ def  home(request):
 
 def add_book(request):
     if request.method=='POST':
-        bookname=request.POST.get('book name')
+        bookname=request.POST.get('bookname')
         author=request.POST.get('author')
         category=request.POST.get('category')
         price=request.POST.get('price')
