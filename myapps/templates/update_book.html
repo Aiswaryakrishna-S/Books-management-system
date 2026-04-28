@@ -1,54 +1,50 @@
-{% extends 'base.html' %} 
-   
-   
+{% extends 'base.html' %}
+
 {% block title %}Update book{% endblock %}
-   
-   
-   {% block content %}   
-   
-   
-   
-   
-  <h1>Update book</h1>
+
+{% block content %}
+
+<h1>Update book</h1>
+
 <form method="POST" enctype="multipart/form-data" class="form-box">
     {% csrf_token %}
 
     <div class="form-group">
-      <label>Bookname:</label><br>
-      <input type="text" name="bookname" value="{{book.bookname}}"><br>
-    </div>
-
-
-    <div class="form-group">
-      <label>Author:</label><br>
-      <input type="text" name="author" value="{{book.author}}"><br>
-    </div>
- 
-    <div class="form-group">
-      <label>Category:</label><br>
-      <input type="text" name="category" value="{{book.category}}"><br>
+        <label>Bookname:</label><br>
+        <input type="text" name="bookname" value="{{book.bookname}}">
     </div>
 
     <div class="form-group">
-      <label>Price:</label><br>
-      <input type="number" name="price" value="{{book.price}}"><br>
+        <label>Author:</label><br>
+        <input type="text" name="author" value="{{book.author}}">
+    </div>
+
+    <div class="form-group">
+        <label>Category:</label><br>
+        <input type="text" name="category" value="{{book.category}}">
+    </div>
+
+    <div class="form-group">
+        <label>Price:</label><br>
+        <input type="number" name="price" value="{{book.price}}">
     </div>
 
     <label>Current Photo:</label><br>
-      {% if book.photo %}
+
+    {% if book.photo %}
         <img src="{{ book.photo.url }}" width="80" height="80"><br>
-      {% else %} 
+    {% else %}
         <p>No image uploaded</p>
-      {% endif %}  
+    {% endif %}
 
-      <label>Change photo:</label><br>
-      <input type="file" name="photo" accept="image/*">
+    <label>Change photo:</label><br>
+    <input type="file" name="photo" accept="image/*">
 
-      <button type="submit">Update</button>
+    <button type="submit">Update</button>
 
+    <br>
 
+    <a href="{% url 'home' %}">Back to Home</a>
+</form>
 
-   <a href="{% url 'home' %}">Back to Home</a> 
-   </form>
-
-   {% endblock %}
+{% endblock %}
