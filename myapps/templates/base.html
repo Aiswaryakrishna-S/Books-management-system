@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block tittle %}Book App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+   <div class="container">
+    <h1>Books Management System</h1>
+
+    <p class='subtitle'>Manage book records easily with this system</p>
+    <hr>
+
+
+    {% block content %}
+
+
+    {% endblock %}
+
+
+
+   </div> 
+</body>
+</html>

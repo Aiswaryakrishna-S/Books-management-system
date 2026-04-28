@@ -7,38 +7,113 @@ body {
 }
 
 .container {
-    width: 70%;
+    width: 36%;
     margin: 50px auto;
     background: white;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 80px;
     box-shadow: 0 5px 20px rgba(red, green, blue, alpha);
     color: blueviolet;
+    height: 60%;
 }
 
 .form-box {
+    
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 2px;
 }
- 
-h1 {
+ h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
 table{
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
     margin-top: 20px;
-    background: yellow;
+    background: rgb(99, 173, 235);
     border-radius:10px ;
 
 
 }
 
 table th{
-    background: yellow;
-    color: rgb(12, 51, 133);
+    background: rgb(21, 4, 133);
+    color: rgb(237, 239, 243);
     padding: 12px;
 }
+table td{
+    text-align: center;
+    padding: 10px;
+    color: #333;
+}
+
+
+a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin: 2px;
+    display: inline-block;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.btn-add{
+    background: black;
+    color: white;
+    margin-bottom: 15px;
+    width: 20%;
+
+}
+
+.btn-update{
+    background-color:rgb(114, 114, 215) ;
+    width: 30%;
+
+}
+
+.btn-delete {
+    background-color:rgb(220, 103, 170);
+}
+
+a.hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+
+}
+
+
+label{
+    font-weight:bold;
+
+}
+
+
+input {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+button {
+    padding: 5px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: blue;
+}
+
+.subtitle{
+    text-align: center;
+}
+

@@ -1,16 +1,14 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book List</title>
-    
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-</head>
-<body>
-    <div class='container'>
+{% extends 'base.html' %} 
+   
+   
+{% block title %}Book List{% endblock %}
+   
+   
+   {% block content %}   
+   
+   
+   
+   
         <h1>Book List</h1>
         <form method="POST" class="form-box">
 
@@ -21,6 +19,8 @@
         <th>Author</th>
         <th>Category</th>
         <th>Price</th>
+        <th>Photo</th>
+        <th>  </th>
     </tr>
 
     {% for book in books %}
@@ -29,6 +29,15 @@
         <td>{{book.author}}</td>
         <td>{{book.category}}</td>
         <td>{{book.price}}</td>
+        <td>
+
+        {% if book.photo %}
+           <img src="{{ book.photo.url }}" width="80" height="80">
+        {% else %}
+            No Image
+        {% endif %}  
+        </td>  
+        
         <td>
          <a class="btn-delete" href="{%  url 'delete_book' book.id %}">Delete</a>
          <a class="btn-update" href="{% url 'update_book' book.id %}">Edit</a>
@@ -43,9 +52,8 @@
  {% else %}
   <p>no books available</p>
  {% endif %}
-</div>
+
     
 </form>
     
-</body>
-</html>
+{% endblock %}
